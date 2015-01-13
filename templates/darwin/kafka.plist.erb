@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>dev.kafka</string>
+
+    <key>Boxen</key>
+    <dict>
+      <key>Description</key>
+      <string>Durable message broker / distributed commit log</string>
+
+      <key>Host</key>
+      <string><%= @host %></string>
+
+      <key>Port</key>
+      <string><%= @port %></string>
+    </dict>
+
+    <key>ProgramArguments</key>
+    <array>
+      <string><%= @executable %></string>
+      <string><%= "#{@configdir}/server.properties" %></string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true />
+
+    <key>KeepAlive</key>
+    <true />
+
+    <key>UserName</key>
+    <string><%= scope.lookupvar "::boxen_user" %></string>
+
+    <key>WorkingDirectory</key>
+    <string><%= scope.lookupvar "kafka::config::configdir" %></string>
+
+    <key>StandardErrorPath</key>
+    <string><%= "#{@logdir}/stderr.log"%></string>
+
+    <key>StandardOutPath</key>
+    <string><%= "#{@logdir}/stdout.log"%></string>
+
+  </dict>
+</plist>
