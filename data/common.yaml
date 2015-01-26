@@ -8,5 +8,5 @@
     id: 0
   kafka::zookeeper:
     host: "localhost"
-    port: "%{zookeeper::config::port}"
+    port: "%{zookeeper::port}"
     chroot: ~

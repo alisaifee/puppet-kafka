@@ -26,7 +26,8 @@ class kafka (
     $host,
     $port,
     $version,
-    $servicename
+    $servicename,
+    $executable
   )
 
   validate_absolute_path(
