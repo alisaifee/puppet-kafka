@@ -2,7 +2,8 @@
   kafka::host:        '127.0.0.1'
   kafka::port:        '19092'
 
-  kafka::version: '0.8.2.0'
+  kafka::package: 'boxen/brews/kafka'
+  kafka::version: '0.8.2.0-boxen1'
 
   kafka::configdir:   "%{::boxen::config::configdir}/kafka"
   kafka::datadir:     "%{::boxen::config::datadir}/kafka"

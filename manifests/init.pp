@@ -5,6 +5,7 @@ class kafka (
   $ensure        = undef,
   $enable        = undef,
 
+  $package        = undef,
   $version        = undef,
 
   $host          = undef,
@@ -61,6 +62,7 @@ class kafka (
   ~>
   class { 'kafka::package':
     ensure  => $ensure,
+    package  => $package,
     version => $version
   }
 
